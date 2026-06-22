@@ -1,0 +1,15 @@
+# Environment files
+.env
+
+# User uploads (except security config)
+projet-main/uploads/bulletins/*
+!projet-main/uploads/bulletins/.htaccess
+!projet-main/uploads/bulletins/.gitkeep
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+*.log
+projet-main/organize_files_final.log

@@ -1,0 +1,23 @@
+# Disable execution of scripts (PHP, python, shell, asp, etc.)
+<FilesMatch "\.(?i:php|phtml|php3|php4|php5|php7|php8|phps|exe|pl|py|cgi|sh|asp|aspx|jsp)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Remove handlers and types for PHP files to prevent parser execution
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .php8 .phps
+RemoveType .php .phtml .php3 .php4 .php5 .php7 .php8 .phps
+
+# Disable php engine if running as mod_php
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php5.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
